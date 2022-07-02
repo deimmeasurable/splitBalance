@@ -10,10 +10,10 @@ app.use('/', router)
 const computeData = require('./splitCaculation')
 
 router.get('/', (req, res)=>{
-    res.send("Stuff")
+    res.send("Running")
 })
 
-router.post("/api/splitBalance", (req, res)=>{
+router.post("/split-payments/compute", (req, res)=>{
 
     const {ID, Amount, SplitInfo} = req.body
     const result = computeData({ID, Amount, SplitInfo})
